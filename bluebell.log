@@ -6,3 +6,7 @@
 {"level":"INFO","time":"2025-01-11T21:39:59.448+0800","caller":"logger/logger.go:72","msg":"/ping","status":200,"method":"GET","path":"/ping","query":"","ip":"::1","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0","errors":"","cost":0.000011833}
 {"level":"INFO","time":"2025-01-11T21:40:55.807+0800","caller":"bluebell/main.go:70","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2025-01-11T21:40:55.808+0800","caller":"bluebell/main.go:79","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-01-11T23:48:03.152+0800","caller":"bluebell/main.go:35","msg":"init logger success"}
+{"level":"INFO","time":"2025-01-11T23:48:16.981+0800","caller":"logger/logger.go:72","msg":"/ping","status":200,"method":"GET","path":"/ping","query":"","ip":"::1","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0","errors":"","cost":0.000022416}
+{"level":"INFO","time":"2025-01-11T23:48:20.801+0800","caller":"bluebell/main.go:76","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-01-11T23:48:22.374+0800","caller":"bluebell/main.go:85","msg":"Server exiting"}

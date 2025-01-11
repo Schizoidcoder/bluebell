@@ -2,7 +2,8 @@ name: "bluebell"
 mode: "dev"
 version: "v0"
 port: 8080
-
+start_time: "2025-01-11"
+machine_id: 1
 log:
   level: "debug"
   filename: "bluebell.log"

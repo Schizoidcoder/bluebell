@@ -4,6 +4,7 @@ import (
 	"bluebell/dao/mysql"
 	"bluebell/dao/redis"
 	"bluebell/logger"
+	"bluebell/pkg/snowflake"
 	"bluebell/routes"
 	"bluebell/settings"
 	"context"
@@ -44,6 +45,11 @@ func main() {
 		return
 	}
 	defer redis.Close()
+
+	if err := snowflake.Init(settings.Conf.StartTime, settings.Conf.MachineID); err != nil {
+		fmt.Println("init snowflake failed", err)
+		return
+	}
 	//5。注册路由
 	r := routes.Setup()
 	//6。启动服务（优雅关机）
