@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bluebell/controller"
 	"bluebell/dao/mysql"
 	"bluebell/dao/redis"
 	"bluebell/logger"
@@ -50,8 +51,13 @@ func main() {
 		fmt.Println("init snowflake failed", err)
 		return
 	}
+	//注册gin框架内置的校验器使用的翻译器
+	if err := controller.InitTrans("zh"); err != nil {
+		fmt.Println("init validator trans failed", err)
+		return
+	}
 	//5。注册路由
-	r := routes.Setup()
+	r := routes.SetupRouter()
 	//6。启动服务（优雅关机）
 	srv := &http.Server{
 		Addr:    fmt.Sprintf(":%d", settings.Conf.Port),
