@@ -151,3 +151,32 @@
 {"level":"INFO","time":"2025-01-12T16:46:12.989+0800","caller":"logger/logger.go:80","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.003471}
 {"level":"INFO","time":"2025-01-12T16:46:52.548+0800","caller":"bluebell/main.go:82","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2025-01-12T16:46:52.548+0800","caller":"bluebell/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-01-12T18:05:24.461+0800","caller":"bluebell/main.go:36","msg":"init logger success"}
+{"level":"ERROR","time":"2025-01-12T19:46:26.680+0800","caller":"controller/user.go:59","msg":"Login error","username":"linbei3","error":"用户不存在"}
+{"level":"INFO","time":"2025-01-12T19:46:26.683+0800","caller":"logger/logger.go:80","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.012896625}
+{"level":"ERROR","time":"2025-01-12T19:46:38.975+0800","caller":"controller/user.go:59","msg":"Login error","username":"linbei3","error":"用户不存在"}
+{"level":"INFO","time":"2025-01-12T19:46:38.975+0800","caller":"logger/logger.go:80","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.001961875}
+{"level":"INFO","time":"2025-01-12T19:46:43.585+0800","caller":"logger/logger.go:80","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.001910917}
+{"level":"INFO","time":"2025-01-12T19:47:02.203+0800","caller":"bluebell/main.go:82","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-01-12T19:47:02.208+0800","caller":"bluebell/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-01-12T19:50:19.968+0800","caller":"bluebell/main.go:36","msg":"init logger success"}
+{"level":"INFO","time":"2025-01-12T19:50:24.283+0800","caller":"logger/logger.go:80","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.004627584}
+{"level":"ERROR","time":"2025-01-12T19:50:28.395+0800","caller":"controller/user.go:59","msg":"Login error","username":"linbei3","error":"用户不存在"}
+{"level":"INFO","time":"2025-01-12T19:50:28.396+0800","caller":"logger/logger.go:80","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.002922209}
+{"level":"INFO","time":"2025-01-12T19:50:37.141+0800","caller":"logger/logger.go:80","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.001810542}
+{"level":"ERROR","time":"2025-01-12T19:50:41.698+0800","caller":"controller/user.go:59","msg":"Login error","username":"linbei3","error":"用户不存在"}
+{"level":"INFO","time":"2025-01-12T19:50:41.699+0800","caller":"logger/logger.go:80","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.002755}
+{"level":"ERROR","time":"2025-01-12T19:50:47.688+0800","caller":"controller/user.go:59","msg":"Login error","username":"linbei3","error":"用户不存在"}
+{"level":"INFO","time":"2025-01-12T19:50:47.688+0800","caller":"logger/logger.go:80","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.002051375}
+{"level":"ERROR","time":"2025-01-12T19:50:52.358+0800","caller":"controller/user.go:59","msg":"Login error","username":"linbei","error":"用户名或密码错误"}
+{"level":"INFO","time":"2025-01-12T19:50:52.359+0800","caller":"logger/logger.go:80","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.002738292}
+{"level":"ERROR","time":"2025-01-12T19:51:11.515+0800","caller":"controller/user.go:59","msg":"Login error","username":"linbeisadasd","error":"用户不存在"}
+{"level":"INFO","time":"2025-01-12T19:51:11.515+0800","caller":"logger/logger.go:80","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.00359825}
+{"level":"ERROR","time":"2025-01-12T19:51:34.710+0800","caller":"controller/user.go:59","msg":"Login error","username":"linbeisadasdsdf","error":"用户不存在"}
+{"level":"INFO","time":"2025-01-12T19:51:34.710+0800","caller":"logger/logger.go:80","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.004476875}
+{"level":"ERROR","time":"2025-01-12T19:53:07.202+0800","caller":"controller/user.go:47","msg":"Login with invalid param","error":"invalid character '}' looking for beginning of object key string"}
+{"level":"INFO","time":"2025-01-12T19:53:07.203+0800","caller":"logger/logger.go:80","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.0010915}
+{"level":"ERROR","time":"2025-01-12T19:53:28.208+0800","caller":"controller/user.go:59","msg":"Login error","username":"linbeisadasdsdf","error":"用户不存在"}
+{"level":"INFO","time":"2025-01-12T19:53:28.209+0800","caller":"logger/logger.go:80","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.006535666}
+{"level":"INFO","time":"2025-01-12T19:53:35.002+0800","caller":"bluebell/main.go:82","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-01-12T19:53:35.003+0800","caller":"bluebell/main.go:91","msg":"Server exiting"}
