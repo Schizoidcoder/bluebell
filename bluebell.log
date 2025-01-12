@@ -88,3 +88,12 @@
 {"level":"INFO","time":"2025-01-12T02:01:29.115+0800","caller":"logger/logger.go:71","msg":"/signup","status":400,"method":"POST","path":"/signup","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.000461375}
 {"level":"INFO","time":"2025-01-12T02:01:42.720+0800","caller":"bluebell/main.go:82","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2025-01-12T02:01:42.721+0800","caller":"bluebell/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-01-12T14:27:36.406+0800","caller":"bluebell/main.go:36","msg":"init logger success"}
+{"level":"ERROR","time":"2025-01-12T14:27:49.286+0800","caller":"controller/user.go:18","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.re_password' Error:Field validation for 're_password' failed on the 'eqfield' tag\nKey: 'ParamSignUp.re_password' Error:Field validation for 're_password' failed on the 'eqfield' tag"}
+{"level":"INFO","time":"2025-01-12T14:27:49.287+0800","caller":"logger/logger.go:71","msg":"/signup","status":400,"method":"POST","path":"/signup","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.000615}
+{"level":"INFO","time":"2025-01-12T14:27:58.453+0800","caller":"logger/logger.go:71","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.03126125}
+{"level":"INFO","time":"2025-01-12T14:29:24.677+0800","caller":"logger/logger.go:71","msg":"/signup","status":500,"method":"POST","path":"/signup","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.003739666}
+{"level":"ERROR","time":"2025-01-12T14:29:33.405+0800","caller":"controller/user.go:18","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.re_password' Error:Field validation for 're_password' failed on the 'eqfield' tag\nKey: 'ParamSignUp.re_password' Error:Field validation for 're_password' failed on the 'eqfield' tag"}
+{"level":"INFO","time":"2025-01-12T14:29:33.406+0800","caller":"logger/logger.go:71","msg":"/signup","status":400,"method":"POST","path":"/signup","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.001104083}
+{"level":"INFO","time":"2025-01-12T14:29:39.582+0800","caller":"bluebell/main.go:82","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-01-12T14:29:39.582+0800","caller":"bluebell/main.go:91","msg":"Server exiting"}
