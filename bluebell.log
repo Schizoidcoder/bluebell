@@ -115,3 +115,39 @@
 {"level":"DEBUG","time":"2025-01-12T16:07:19.454+0800","caller":"bluebell/main.go:36","msg":"init logger success"}
 {"level":"INFO","time":"2025-01-12T16:07:25.575+0800","caller":"bluebell/main.go:82","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2025-01-12T16:07:25.575+0800","caller":"bluebell/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-01-12T16:32:41.531+0800","caller":"bluebell/main.go:36","msg":"init logger success"}
+{"level":"ERROR","time":"2025-01-12T16:33:18.037+0800","caller":"controller/user.go:49","msg":"Login with invalid param","error":"Key: 'ParamLogin.password' Error:Field validation for 'password' failed on the 'required' tag"}
+{"level":"INFO","time":"2025-01-12T16:33:18.037+0800","caller":"logger/logger.go:80","msg":"/login","status":400,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.000486083}
+{"level":"ERROR","time":"2025-01-12T16:33:26.759+0800","caller":"mysql/mysql.go:43","msg":"get user failed","error":"Error 1146 (42S02): Table 'bluebell.users' doesn't exist"}
+{"level":"ERROR","time":"2025-01-12T16:33:26.759+0800","caller":"controller/user.go:65","msg":"Login error","error":"Error 1146 (42S02): Table 'bluebell.users' doesn't exist"}
+{"level":"INFO","time":"2025-01-12T16:33:26.760+0800","caller":"logger/logger.go:80","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.006350125}
+{"level":"ERROR","time":"2025-01-12T16:34:14.731+0800","caller":"controller/user.go:18","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.re_password' Error:Field validation for 're_password' failed on the 'required' tag\nKey: 'ParamSignUp.re_password' Error:Field validation for 're_password' failed on the 'eqfield' tag"}
+{"level":"INFO","time":"2025-01-12T16:34:14.732+0800","caller":"logger/logger.go:80","msg":"/signup","status":400,"method":"POST","path":"/signup","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.000734542}
+{"level":"INFO","time":"2025-01-12T16:34:39.055+0800","caller":"logger/logger.go:80","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.011515959}
+{"level":"ERROR","time":"2025-01-12T16:34:58.255+0800","caller":"mysql/mysql.go:43","msg":"get user failed","error":"Error 1146 (42S02): Table 'bluebell.users' doesn't exist"}
+{"level":"ERROR","time":"2025-01-12T16:34:58.256+0800","caller":"controller/user.go:65","msg":"Login error","error":"Error 1146 (42S02): Table 'bluebell.users' doesn't exist"}
+{"level":"INFO","time":"2025-01-12T16:34:58.256+0800","caller":"logger/logger.go:80","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.001515625}
+{"level":"INFO","time":"2025-01-12T16:37:31.608+0800","caller":"bluebell/main.go:82","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-01-12T16:37:31.609+0800","caller":"bluebell/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-01-12T16:37:42.359+0800","caller":"bluebell/main.go:36","msg":"init logger success"}
+{"level":"ERROR","time":"2025-01-12T16:37:50.994+0800","caller":"mysql/mysql.go:43","msg":"get user failed","error":"Error 1146 (42S02): Table 'bluebell.users' doesn't exist"}
+{"level":"ERROR","time":"2025-01-12T16:37:50.994+0800","caller":"controller/user.go:65","msg":"Login error","error":"Error 1146 (42S02): Table 'bluebell.users' doesn't exist"}
+{"level":"INFO","time":"2025-01-12T16:37:50.994+0800","caller":"logger/logger.go:80","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.005493334}
+{"level":"INFO","time":"2025-01-12T16:38:33.506+0800","caller":"bluebell/main.go:82","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-01-12T16:38:33.506+0800","caller":"bluebell/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-01-12T16:40:54.356+0800","caller":"bluebell/main.go:36","msg":"init logger success"}
+{"level":"INFO","time":"2025-01-12T16:40:57.745+0800","caller":"logger/logger.go:80","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.002796834}
+{"level":"ERROR","time":"2025-01-12T16:41:02.355+0800","caller":"controller/user.go:65","msg":"Login error","error":"密码错误"}
+{"level":"INFO","time":"2025-01-12T16:41:02.356+0800","caller":"logger/logger.go:80","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.0021055}
+{"level":"INFO","time":"2025-01-12T16:41:07.929+0800","caller":"bluebell/main.go:82","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-01-12T16:41:07.929+0800","caller":"bluebell/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-01-12T16:45:27.771+0800","caller":"bluebell/main.go:36","msg":"init logger success"}
+{"level":"ERROR","time":"2025-01-12T16:45:29.873+0800","caller":"controller/user.go:65","msg":"Login error","error":"用户不存在"}
+{"level":"INFO","time":"2025-01-12T16:45:29.873+0800","caller":"logger/logger.go:80","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.008306834}
+{"level":"INFO","time":"2025-01-12T16:46:06.797+0800","caller":"bluebell/main.go:82","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-01-12T16:46:06.799+0800","caller":"bluebell/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-01-12T16:46:09.373+0800","caller":"bluebell/main.go:36","msg":"init logger success"}
+{"level":"ERROR","time":"2025-01-12T16:46:12.989+0800","caller":"controller/user.go:65","msg":"Login error","username":"linbei3","error":"用户不存在"}
+{"level":"INFO","time":"2025-01-12T16:46:12.989+0800","caller":"logger/logger.go:80","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.003471}
+{"level":"INFO","time":"2025-01-12T16:46:52.548+0800","caller":"bluebell/main.go:82","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-01-12T16:46:52.548+0800","caller":"bluebell/main.go:91","msg":"Server exiting"}
