@@ -5,9 +5,10 @@ import (
 	"time"
 
 	"github.com/golang-jwt/jwt/v4"
+	"github.com/spf13/viper"
 )
 
-const TokenExpireDuration = time.Hour * 24
+var TokenExpireDuration = time.Hour * 24
 
 // mySecret 用于加盐的字符串
 var mySecret = []byte("asdasd")
@@ -25,6 +26,7 @@ type MyClaims struct {
 
 // GenToken 生成JWT
 func GenToken(userID int64, username string) (string, error) {
+	TokenExpireDuration = time.Duration(viper.GetInt64("auth.jwt_expire")) * time.Hour
 	// 创建一个我们自己的声明
 	claims := MyClaims{
 		userID,

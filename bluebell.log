@@ -241,3 +241,10 @@
 {"level":"DEBUG","time":"2025-01-14T18:07:44.048+0800","caller":"bluebell/main.go:36","msg":"init logger success"}
 {"level":"INFO","time":"2025-01-14T18:07:45.923+0800","caller":"logger/logger.go:80","msg":"/ping","status":200,"method":"GET","path":"/ping","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0","errors":"","cost":0.000068667}
 {"level":"INFO","time":"2025-01-14T18:07:46.726+0800","caller":"logger/logger.go:80","msg":"/ping","status":200,"method":"GET","path":"/ping","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0","errors":"","cost":0.00002125}
+{"level":"DEBUG","time":"2025-01-14T18:13:44.681+0800","caller":"bluebell/main.go:36","msg":"init logger success"}
+{"level":"INFO","time":"2025-01-14T18:13:46.223+0800","caller":"bluebell/main.go:82","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-01-14T18:13:46.223+0800","caller":"bluebell/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-01-14T19:06:40.883+0800","caller":"bluebell/main.go:36","msg":"init logger success"}
+{"level":"INFO","time":"2025-01-14T19:07:10.622+0800","caller":"logger/logger.go:80","msg":"/login","status":404,"method":"GET","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.000100541}
+{"level":"INFO","time":"2025-01-14T19:07:27.526+0800","caller":"logger/logger.go:80","msg":"/api/v1/login","status":200,"method":"POST","path":"/api/v1/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.0063095}
+{"level":"INFO","time":"2025-01-14T19:08:08.059+0800","caller":"logger/logger.go:80","msg":"/api/v1/community","status":200,"method":"GET","path":"/api/v1/community","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.002329584}
