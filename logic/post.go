@@ -15,7 +15,7 @@ func CreatePost(p *models.Post) (err error) {
 	return mysql.CreatePost(p)
 }
 
-//GetPostByID
+// GetPostByID
 func GetPostById(pid int64) (data *models.ApiPostDetail, err error) {
 	//查询并组合我们接口想用的数据
 	post, err := mysql.GetPostById(pid)
