@@ -261,3 +261,16 @@
 {"level":"INFO","time":"2025-01-14T23:22:17.136+0800","caller":"logger/logger.go:80","msg":"/api/v1/community/23fas","status":200,"method":"GET","path":"/api/v1/community/23fas","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.000237791}
 {"level":"INFO","time":"2025-01-14T23:22:56.309+0800","caller":"bluebell/main.go:82","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2025-01-14T23:22:56.310+0800","caller":"bluebell/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-01-15T12:49:10.258+0800","caller":"bluebell/main.go:36","msg":"init logger success"}
+{"level":"INFO","time":"2025-01-15T12:49:38.649+0800","caller":"logger/logger.go:80","msg":"/api/v1/post","status":404,"method":"GET","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.000168709}
+{"level":"INFO","time":"2025-01-15T12:49:51.476+0800","caller":"logger/logger.go:80","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.000298167}
+{"level":"INFO","time":"2025-01-15T15:45:52.453+0800","caller":"bluebell/main.go:82","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-01-15T15:45:52.458+0800","caller":"bluebell/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-01-15T15:45:59.088+0800","caller":"bluebell/main.go:36","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-01-15T15:46:08.150+0800","caller":"controller/post.go:15","msg":"ShouldBindJSON err","error":"Key: 'Post.author_id' Error:Field validation for 'author_id' failed on the 'required' tag\nKey: 'Post.community_id' Error:Field validation for 'community_id' failed on the 'required' tag"}
+{"level":"ERROR","time":"2025-01-15T15:46:08.151+0800","caller":"controller/post.go:16","msg":"create post invalidParam","error":"Key: 'Post.author_id' Error:Field validation for 'author_id' failed on the 'required' tag\nKey: 'Post.community_id' Error:Field validation for 'community_id' failed on the 'required' tag"}
+{"level":"INFO","time":"2025-01-15T15:46:08.151+0800","caller":"logger/logger.go:80","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.000533708}
+{"level":"INFO","time":"2025-01-15T15:47:53.335+0800","caller":"bluebell/main.go:82","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-01-15T15:47:53.336+0800","caller":"bluebell/main.go:91","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-01-15T15:48:00.331+0800","caller":"bluebell/main.go:36","msg":"init logger success"}
+{"level":"INFO","time":"2025-01-15T15:48:04.040+0800","caller":"logger/logger.go:80","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.43.0","errors":"","cost":0.009421625}
