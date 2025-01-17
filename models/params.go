@@ -30,7 +30,13 @@ const (
 
 // ParamPostList 获取帖子列表 query string参数
 type ParamPostList struct {
-	Page  int64  `json:"page" form:"page"`
-	Size  int64  `json:"size" form:"size"`
-	Order string `json:"order" form:"order"`
+	CommunityID int64  `json:"community_id" form:"community_id"`
+	Page        int64  `json:"page" form:"page"`
+	Size        int64  `json:"size" form:"size"`
+	Order       string `json:"order" form:"order"`
+}
+
+// ParamCommunityPostList 获取帖子列表 query string参数
+type ParamCommunityPostList struct {
+	*ParamPostList
 }
