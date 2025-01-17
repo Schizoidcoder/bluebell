@@ -1,0 +1,115 @@
+definitions:
+  controller._ResponsePostList:
+    properties:
+      code:
+        allOf:
+        - $ref: '#/definitions/controller.ResCode'
+        description: 业务响应状态码
+      data:
+        description: 数据
+        items:
+          $ref: '#/definitions/models.ApiPostDetail'
+        type: array
+      message:
+        description: 提示信息
+        type: string
+    type: object
+  controller.ResCode:
+    enum:
+    - 1000
+    - 1001
+    - 1002
+    - 1003
+    - 1004
+    - 1005
+    - 1006
+    - 1007
+    - 1008
+    type: integer
+    x-enum-varnames:
+    - CodeSuccess
+    - CodeInvalidParam
+    - CodeUserExist
+    - CodeUserNotExist
+    - CodeInvalidPassword
+    - CodeServerBusy
+    - CodeInvalidAuth
+    - CodeNeedLogin
+    - CodeInvalidToken
+  models.ApiPostDetail:
+    properties:
+      author_id:
+        type: integer
+      author_name:
+        type: string
+      community:
+        $ref: '#/definitions/models.CommunityDetail'
+      community_id:
+        type: integer
+      content:
+        type: string
+      create_time:
+        type: string
+      id:
+        example: "0"
+        type: string
+      status:
+        type: integer
+      title:
+        type: string
+      vote_num:
+        type: integer
+    required:
+    - community_id
+    - content
+    - title
+    type: object
+  models.CommunityDetail:
+    properties:
+      create_time:
+        type: string
+      id:
+        type: integer
+      introduction:
+        type: string
+      name:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /posts2:
+    get:
+      consumes:
+      - application/json
+      description: 可按社区按时间或分数排序查询帖子列表接口
+      parameters:
+      - description: Bearer 用户令牌
+        in: header
+        name: Authorization
+        type: string
+      - in: query
+        name: community_id
+        type: integer
+      - in: query
+        name: order
+        type: string
+      - in: query
+        name: page
+        type: integer
+      - in: query
+        name: size
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controller._ResponsePostList'
+      security:
+      - ApiKeyAuth: []
+      summary: 升级版帖子列表接口
+      tags:
+      - 帖子相关接口
+swagger: "2.0"

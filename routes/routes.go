@@ -6,6 +6,8 @@ import (
 	"bluebell/middlewares"
 	"net/http"
 
+	_ "bluebell/docs"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -41,5 +43,6 @@ func SetupRouter(mode string) *gin.Engine {
 	r.NoRoute(func(c *gin.Context) {
 		c.JSON(http.StatusNotFound, gin.H{"message": "404 not found"})
 	})
+	//r.GET("/swagger/*any", gs.WrapHandler(swaggerFiles.Handler))
 	return r
 }
