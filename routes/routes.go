@@ -5,6 +5,7 @@ import (
 	"bluebell/logger"
 	"bluebell/middlewares"
 	"net/http"
+	"time"
 
 	_ "bluebell/docs"
 
@@ -16,7 +17,7 @@ func SetupRouter(mode string) *gin.Engine {
 		gin.SetMode(gin.ReleaseMode)
 	}
 	r := gin.New()
-	r.Use(logger.GinLogger(), logger.GinRecovery(true))
+	r.Use(logger.GinLogger(), logger.GinRecovery(true), middlewares.RateLimitMiddleware(time.Second*2, 1))
 
 	v1 := r.Group("/api/v1")
 	//注册

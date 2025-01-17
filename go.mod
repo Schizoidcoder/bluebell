@@ -13,9 +13,8 @@ require (
 	github.com/go-sql-driver/mysql v1.8.1
 	github.com/golang-jwt/jwt/v4 v4.5.1
 	github.com/jmoiron/sqlx v1.4.0
+	github.com/juju/ratelimit v1.0.2
 	github.com/spf13/viper v1.19.0
-	github.com/swaggo/files v0.0.0-20220610200504-28940afbdbfe
-	github.com/swaggo/gin-swagger v1.5.0
 	github.com/swaggo/swag v1.16.4
 	go.uber.org/zap v1.27.0
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
