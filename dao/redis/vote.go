@@ -28,7 +28,7 @@ func CreatePost(postID, communityID int64) error {
 	})
 	//帖子分数
 	pipeline.ZAdd(getRedisKey(KeyPostScoreZSet), redis.Z{
-		Score:  float64(time.Now().Unix()),
+		Score:  0,
 		Member: postID,
 	})
 	// 把帖子id加到社区的set

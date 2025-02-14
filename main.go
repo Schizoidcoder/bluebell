@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bluebell/Kafka"
 	"bluebell/controller"
 	"bluebell/dao/mysql"
 	"bluebell/dao/redis"
@@ -56,6 +57,8 @@ func main() {
 		fmt.Println("init validator trans failed", err)
 		return
 	}
+	Kafka.Init()
+	zap.L().Debug("init kafka success")
 	//5。注册路由
 	r := routes.SetupRouter(settings.Conf.Mode)
 	//6。启动服务（优雅关机）
@@ -79,6 +82,7 @@ func main() {
 	// signal.Notify把收到的 syscall.SIGINT或syscall.SIGTERM 信号转发给quit
 	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM) // 此处不会阻塞
 	<-quit                                               // 阻塞在此，当接收到上述两种信号时才会往下执行
+	Kafka.Close()
 	zap.L().Info("Shutdown Server ...")
 	// 创建一个5秒超时的context
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)

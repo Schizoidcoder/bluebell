@@ -15,7 +15,6 @@ func SetupRouter(mode string) *gin.Engine {
 		gin.SetMode(gin.ReleaseMode)
 	}
 	r := gin.New()
-	//r.Use(logger.GinLogger(), logger.GinRecovery(true), middlewares.RateLimitMiddleware(time.Second*2, 1))
 	r.Use(logger.GinLogger(), logger.GinRecovery(true))
 
 	r.LoadHTMLGlob("./templates/*")
@@ -23,6 +22,7 @@ func SetupRouter(mode string) *gin.Engine {
 	r.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.html", nil)
 	})
+	//r.Use(middlewares.RateLimitMiddleware(time.Second*2, 1))
 	v1 := r.Group("/api/v1")
 	//注册
 	v1.POST("/signup", controller.SignUpHandler)
@@ -35,9 +35,7 @@ func SetupRouter(mode string) *gin.Engine {
 	v1.GET("/post/:id", controller.GetPostDetailHandler)
 	v1.GET("/posts", controller.GetPostListHandler)
 	v1.Use(middlewares.JWTAuthMiddleware()) //应用JWT认证中间件
-
 	{
-
 		v1.POST("/post", controller.CreatePostHandler)
 		//投票
 		v1.POST("/vote", controller.PostVoteController)
