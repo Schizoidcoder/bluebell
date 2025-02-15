@@ -11,16 +11,16 @@ import (
 var (
 	Kafka_writer *kafka.Writer
 	Kafka_reader *kafka.Reader
+	Ctx          context.Context = context.Background()
 )
 
 func Init() {
 	var wg sync.WaitGroup
 	wg.Add(1)
-	var ctx context.Context = context.Background()
-	Kafka_writer = GetKafkaWriter(ctx, "like_event")
+	Kafka_writer = GetKafkaWriter(Ctx, "like_event")
 	go func() {
 		wg.Done()
-		InitKafkaReader(ctx, []string{"like_event", "comment_event"})
+		InitKafkaReader(Ctx, []string{"like_event", "comment_event"})
 	}()
 	wg.Wait()
 }

@@ -1,6 +1,8 @@
 package logic
 
 import (
+	"bluebell/Kafka"
+	"bluebell/dao/mysql"
 	"bluebell/dao/redis"
 	"bluebell/models"
 	"strconv"
@@ -37,5 +39,34 @@ func VoteForPost(userID int64, p *models.ParamVoteData) error {
 		zap.Int64("user_id", userID),
 		zap.String("postID", p.PostID),
 		zap.Int8("direction", p.Direction))
-	return redis.VoteForPost(strconv.Itoa(int(userID)), p.PostID, float64(p.Direction))
+	err := redis.VoteForPost(strconv.Itoa(int(userID)), p.PostID, float64(p.Direction))
+	if err != nil {
+		return err
+	}
+	var user *models.User
+	user, err = mysql.GetUserById(userID)
+	if err != nil {
+		zap.L().Error("投票：查询用户失败mysql.GetUserById", zap.Error(err))
+		return err
+	}
+	var Post *models.Post
+	var postId int64
+	postId, err = strconv.ParseInt(p.PostID, 10, 64)
+	if err != nil {
+		zap.L().Error("投票：ParsePostID失败", zap.Error(err))
+		return err
+	}
+	Post, err = mysql.GetPostAuthorById(postId)
+	if err != nil {
+		return err
+	}
+	if p.Direction == 1 {
+		return Kafka.KafkaSendMessage(userID, Post.AuthorID, p.PostID, user.Username, "like_event", "点赞")
+	} else if p.Direction == 0 {
+		return Kafka.KafkaSendMessage(userID, Post.AuthorID, p.PostID, user.Username, "like_event", "取消")
+	} else if p.Direction == -1 {
+		return Kafka.KafkaSendMessage(userID, Post.AuthorID, p.PostID, user.Username, "like_event", "点踩")
+	} else {
+		return err
+	}
 }

@@ -1,7 +1,9 @@
 package Kafka
 
 import (
+	"bluebell/models"
 	"context"
+	"encoding/json"
 	"fmt"
 	"time"
 
@@ -22,7 +24,13 @@ func InitKafkaReader(ctx context.Context, topics []string) {
 			fmt.Println(err)
 			break
 		} else {
-			fmt.Println(msg.Topic, string(msg.Key), string(msg.Value))
+			var event models.Event
+			err = json.Unmarshal(msg.Value, &event)
+			if err != nil {
+				fmt.Println(err)
+				continue
+			}
+			fmt.Println(msg.Topic, string(msg.Key), event)
 		}
 	}
 }

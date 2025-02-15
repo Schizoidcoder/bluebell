@@ -22,6 +22,13 @@ func GetPostById(pid int64) (post *models.Post, err error) {
 	return
 }
 
+func GetPostAuthorById(pid int64) (post *models.Post, err error) {
+	post = new(models.Post)
+	sqlStr := `select author_id from post where post_id = ?`
+	err = db.Get(post, sqlStr, pid)
+	return
+}
+
 //根据id获取用户信息
 func GetUserById(id int64) (user *models.User, err error) {
 	user = new(models.User)
