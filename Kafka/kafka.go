@@ -18,7 +18,6 @@ func Init() {
 	wg.Add(1)
 	var ctx context.Context = context.Background()
 	Kafka_like_writer = GetKafkaWriter(ctx, "like_event")
-	defer Kafka_like_writer.Close()
 	go func() {
 		wg.Done()
 		InitKafkaReader(ctx, "like_event")
@@ -27,11 +26,16 @@ func Init() {
 }
 
 func Close() {
+	if Kafka_like_writer != nil {
+		err := Kafka_like_writer.Close()
+		if err != nil {
+			fmt.Println(err)
+		}
+	}
 	if Kafka_like_reader != nil {
 		err := Kafka_like_reader.Close()
 		if err != nil {
 			fmt.Println(err)
-			panic(err)
 		}
 	}
 }

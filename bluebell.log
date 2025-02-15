@@ -33,3 +33,17 @@
 {"level":"DEBUG","time":"2025-02-14T23:54:31.892+0800","caller":"bluebell/main.go:61","msg":"init kafka success"}
 {"level":"INFO","time":"2025-02-14T23:58:12.263+0800","caller":"bluebell/main.go:86","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2025-02-14T23:58:12.263+0800","caller":"bluebell/main.go:95","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-02-15T12:24:45.064+0800","caller":"bluebell/main.go:38","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-02-15T12:24:45.075+0800","caller":"bluebell/main.go:62","msg":"init kafka success"}
+{"level":"INFO","time":"2025-02-15T12:38:06.391+0800","caller":"bluebell/main.go:89","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-02-15T12:38:06.393+0800","caller":"bluebell/main.go:98","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-02-15T12:39:39.345+0800","caller":"bluebell/main.go:38","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-02-15T12:39:39.356+0800","caller":"bluebell/main.go:62","msg":"init kafka success"}
+{"level":"DEBUG","time":"2025-02-15T12:40:28.250+0800","caller":"bluebell/main.go:38","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-02-15T12:40:28.255+0800","caller":"bluebell/main.go:62","msg":"init kafka success"}
+{"level":"INFO","time":"2025-02-15T12:49:01.450+0800","caller":"bluebell/main.go:92","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-02-15T12:49:01.451+0800","caller":"bluebell/main.go:101","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-02-15T12:49:13.444+0800","caller":"bluebell/main.go:38","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-02-15T12:49:13.452+0800","caller":"bluebell/main.go:62","msg":"init kafka success"}
+{"level":"INFO","time":"2025-02-15T12:49:32.486+0800","caller":"bluebell/main.go:92","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-02-15T12:49:32.486+0800","caller":"bluebell/main.go:101","msg":"Server exiting"}
