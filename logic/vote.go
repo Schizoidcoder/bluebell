@@ -39,7 +39,7 @@ func VoteForPost(userID int64, p *models.ParamVoteData) error {
 		zap.Int64("user_id", userID),
 		zap.String("postID", p.PostID),
 		zap.Int8("direction", p.Direction))
-	err := redis.VoteForPost(strconv.Itoa(int(userID)), p.PostID, float64(p.Direction))
+	preValue, err := redis.VoteForPostCheck(strconv.Itoa(int(userID)), p.PostID, float64(p.Direction))
 	if err != nil {
 		return err
 	}
@@ -61,12 +61,15 @@ func VoteForPost(userID int64, p *models.ParamVoteData) error {
 		return err
 	}
 	if p.Direction == 1 {
-		return Kafka.KafkaSendMessage(userID, Post.AuthorID, p.PostID, user.Username, "like_event", "点赞")
+		err = Kafka.KafkaSendMessage(userID, Post.AuthorID, p.PostID, user.Username, "like_event", "点赞")
 	} else if p.Direction == 0 {
-		return Kafka.KafkaSendMessage(userID, Post.AuthorID, p.PostID, user.Username, "like_event", "取消")
+		err = Kafka.KafkaSendMessage(userID, Post.AuthorID, p.PostID, user.Username, "like_event", "取消")
 	} else if p.Direction == -1 {
-		return Kafka.KafkaSendMessage(userID, Post.AuthorID, p.PostID, user.Username, "like_event", "点踩")
-	} else {
+		err = Kafka.KafkaSendMessage(userID, Post.AuthorID, p.PostID, user.Username, "like_event", "点踩")
+	}
+	if err != nil {
+		zap.L().Error("投票失败", zap.Error(err))
 		return err
 	}
+	return redis.VoteForPost(strconv.Itoa(int(userID)), p.PostID, float64(p.Direction), preValue)
 }

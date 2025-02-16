@@ -2,7 +2,6 @@ package redis
 
 import (
 	"errors"
-	"fmt"
 	"strconv"
 	"time"
 
@@ -55,12 +54,12 @@ direction=-1时，有两种情况：
       1.到期之后将redis中保存的赞成票数及反对票数存储到mysql表中
       2。到期之后删除那个KeyPostVotedZSetPF
 */
-func VoteForPost(userID, postID string, value float64) error {
+func VoteForPostCheck(userID, postID string, value float64) (preValue float64, err error) {
 	// 1.判断投票的限制
 	//去redis取帖子发布时间
 	postTime := rdb.ZScore(getRedisKey(KeyPostTimeZSet), postID).Val()
 	if float64(time.Now().Unix())-postTime > oneWeekInSeconds {
-		return ErrVoteTimeExpire
+		return 0, ErrVoteTimeExpire
 	}
 	//2和3需要放到一个pipeline事务中操作
 	//2.更新帖子的分数
@@ -68,11 +67,15 @@ func VoteForPost(userID, postID string, value float64) error {
 	ov := rdb.ZScore(getRedisKey(KeyPostVotedZSetPF+postID), userID).Val()
 	//如果这次投票的值和之前保存的值一直，就提示不允许重复投票
 	if value == ov {
-		return ErrVoteRepeated
+		return 0, ErrVoteRepeated
 	}
+	return ov, nil
+}
+
+func VoteForPost(userID, postID string, value float64, preValue float64) error {
+
 	//计算两次投票的差值
-	diff := value - ov
-	fmt.Println(value, ov, diff)
+	diff := value - preValue
 	pipeline := rdb.TxPipeline()
 	pipeline.ZIncrBy(getRedisKey(KeyPostScoreZSet), diff*scorePerVote, postID).Result()
 
