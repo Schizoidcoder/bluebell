@@ -10,7 +10,7 @@ import (
 //存放业务逻辑的代码
 func SignUp(p *models.ParamSignUp) (err error) {
 	//判断用户存不存在
-	if err := mysql.CheckUserExist(p.Username); err != nil {
+	if err := mysql.CheckUserExistByName(p.Username); err != nil {
 		//数据库查询出错
 		return err
 	}

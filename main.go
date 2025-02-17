@@ -9,6 +9,7 @@ import (
 	"bluebell/pkg/snowflake"
 	"bluebell/routes"
 	"bluebell/settings"
+	"bluebell/websocket"
 	"context"
 	"fmt"
 	"log"
@@ -59,6 +60,8 @@ func main() {
 	}
 	Kafka.Init()
 	zap.L().Debug("init kafka success")
+	go websocket.Init()
+	zap.L().Debug("init websocket success")
 	//5。注册路由
 	r := routes.SetupRouter(settings.Conf.Mode)
 	//6。启动服务（优雅关机）
@@ -73,7 +76,6 @@ func main() {
 			log.Fatalf("listen: %s\n", err)
 		}
 	}()
-
 	//KafkaTesting
 	//err := Kafka.Kafka_writer.WriteMessages(context.Background(), kafka.Message{
 	//	Topic: "like_event",

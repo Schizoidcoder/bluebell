@@ -12,8 +12,8 @@ import (
 
 const sercret = "sadasdsd"
 
-// CheckUserExist 检查指定用户名是否存在
-func CheckUserExist(username string) (err error) {
+// CheckUserExistByName 检查指定用户名是否存在
+func CheckUserExistByName(username string) (err error) {
 	sqlStr := `select count(user_id) from user where username = ?`
 	var count int
 	if err := db.Get(&count, sqlStr, username); err != nil {
@@ -23,6 +23,15 @@ func CheckUserExist(username string) (err error) {
 		return ErrorUserExist
 	}
 	return nil
+}
+
+// CheckUserExistById 检查指定用户名是否存在
+func CheckUserExistById(userid int64) (username string, err error) {
+	sqlStr := `select username from user where user_id = ?`
+	if err = db.Get(&username, sqlStr, userid); err != nil {
+		return "", err
+	}
+	return username, nil
 }
 
 // InsertUser 向数据库中插入一条新的用户记录
