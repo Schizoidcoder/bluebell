@@ -85,6 +85,7 @@ func Read(c *models.Client) {
 			}
 			msg, _ := json.Marshal(replyMsg)
 			_ = c.Socket.WriteMessage(websocket.TextMessage, msg)
+			//Todo：用户下线后的逻辑
 			continue
 		}
 		replyMsg := models.ReplyMsg{

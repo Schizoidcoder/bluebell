@@ -2,9 +2,12 @@ package Kafka
 
 import (
 	"bluebell/models"
+	mywebsocket "bluebell/websocket"
 	"context"
 	"encoding/json"
 	"fmt"
+	"log"
+	"strconv"
 	"time"
 
 	"github.com/segmentio/kafka-go"
@@ -30,7 +33,15 @@ func InitKafkaReader(ctx context.Context, topics []string) {
 				fmt.Println(err)
 				continue
 			}
-			fmt.Println(msg.Topic, string(msg.Key), event)
+			itoa := strconv.FormatInt(event.AuthorID, 10)
+			AimClient, flag := mywebsocket.CheckIfConnected(itoa)
+			if !flag {
+				log.Printf("当前用户已下线")
+				//Todo:用户下线后的逻辑
+				continue
+			}
+			AimClient.Send <- msg.Value
+			//fmt.Println(msg.Topic, string(msg.Key), event)
 		}
 	}
 }

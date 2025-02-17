@@ -4,6 +4,7 @@ import (
 	"bluebell/controller"
 	_ "bluebell/docs"
 	"bluebell/logger"
+	"bluebell/middlewares"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -33,7 +34,7 @@ func SetupRouter(mode string) *gin.Engine {
 	v1.GET("/community/:id", controller.CommunityDetailHandler)
 	v1.GET("/post/:id", controller.GetPostDetailHandler)
 	v1.GET("/posts", controller.GetPostListHandler)
-	//v1.Use(middlewares.JWTAuthMiddleware()) //应用JWT认证中间件
+	v1.Use(middlewares.JWTAuthMiddleware()) //应用JWT认证中间件
 	{
 		v1.GET("/ws", controller.WebsocketHandler)
 		v1.POST("/post", controller.CreatePostHandler)
