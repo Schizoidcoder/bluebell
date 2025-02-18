@@ -445,3 +445,83 @@
 {"level":"DEBUG","time":"2025-02-17T23:50:53.243+0800","caller":"logic/websocket.go:112","msg":"12805176079421440 接受消息:{\"user_id\":12894612662259712,\"author_id\":12805176079421440,\"post_id\":\"12894300002062336\",\"user_name\":\"彭于晏\",\"action\":\"点踩\"}"}
 {"level":"INFO","time":"2025-02-17T23:51:38.263+0800","caller":"bluebell/main.go:102","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2025-02-17T23:51:38.263+0800","caller":"bluebell/main.go:111","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-02-18T15:53:06.530+0800","caller":"bluebell/main.go:39","msg":"init logger success"}
+{"level":"ERROR","time":"2025-02-18T15:53:06.531+0800","caller":"mongo/mongo.go:20","msg":"connect mongo error","error":"error parsing uri: invalid host \"\": invalid host \"127.0.0.1:%!s(int=27017)\": invalid URL escape \"%!s\""}
+{"level":"DEBUG","time":"2025-02-18T15:54:03.940+0800","caller":"bluebell/main.go:39","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-02-18T15:54:03.957+0800","caller":"bluebell/main.go:67","msg":"init kafka success"}
+{"level":"DEBUG","time":"2025-02-18T15:54:03.957+0800","caller":"bluebell/main.go:69","msg":"init websocket success"}
+{"level":"INFO","time":"2025-02-18T15:54:34.048+0800","caller":"bluebell/main.go:107","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-02-18T15:54:34.048+0800","caller":"bluebell/main.go:116","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-02-18T16:33:03.365+0800","caller":"bluebell/main.go:39","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-02-18T16:35:35.482+0800","caller":"bluebell/main.go:39","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-02-18T16:35:35.498+0800","caller":"bluebell/main.go:68","msg":"init kafka success"}
+{"level":"DEBUG","time":"2025-02-18T16:35:35.498+0800","caller":"bluebell/main.go:70","msg":"init websocket success"}
+{"level":"INFO","time":"2025-02-18T16:36:05.579+0800","caller":"bluebell/main.go:108","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-02-18T16:36:05.580+0800","caller":"bluebell/main.go:117","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-02-18T16:36:12.434+0800","caller":"bluebell/main.go:39","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-02-18T16:36:12.441+0800","caller":"bluebell/main.go:68","msg":"init kafka success"}
+{"level":"DEBUG","time":"2025-02-18T16:36:12.441+0800","caller":"bluebell/main.go:70","msg":"init websocket success"}
+{"level":"INFO","time":"2025-02-18T16:37:00.503+0800","caller":"bluebell/main.go:108","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-02-18T16:37:00.504+0800","caller":"bluebell/main.go:117","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-02-18T16:37:07.776+0800","caller":"bluebell/main.go:39","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-02-18T16:37:07.777+0800","caller":"bluebell/main.go:44","msg":"init mongodb success"}
+{"level":"DEBUG","time":"2025-02-18T16:43:05.968+0800","caller":"bluebell/main.go:39","msg":"init logger success"}
+{"level":"ERROR","time":"2025-02-18T16:43:05.970+0800","caller":"mongo/mongo.go:49","msg":"connect mongo error","error":"error validating uri: password required for SCRAM-SHA-256"}
+{"level":"DEBUG","time":"2025-02-18T16:45:18.416+0800","caller":"bluebell/main.go:39","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-02-18T16:45:18.417+0800","caller":"bluebell/main.go:44","msg":"init mongodb success"}
+{"level":"DEBUG","time":"2025-02-18T16:50:09.157+0800","caller":"bluebell/main.go:39","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-02-18T16:50:09.158+0800","caller":"bluebell/main.go:44","msg":"init mongodb success"}
+{"level":"DEBUG","time":"2025-02-18T16:52:49.794+0800","caller":"bluebell/main.go:39","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-02-18T16:52:49.796+0800","caller":"bluebell/main.go:44","msg":"init mongodb success"}
+{"level":"DEBUG","time":"2025-02-18T16:52:49.818+0800","caller":"bluebell/main.go:69","msg":"init kafka success"}
+{"level":"DEBUG","time":"2025-02-18T16:52:49.818+0800","caller":"bluebell/main.go:71","msg":"init websocket success"}
+{"level":"INFO","time":"2025-02-18T17:00:05.160+0800","caller":"bluebell/main.go:109","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-02-18T17:00:05.161+0800","caller":"bluebell/main.go:118","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-02-18T17:00:09.635+0800","caller":"bluebell/main.go:39","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-02-18T17:00:09.636+0800","caller":"bluebell/main.go:44","msg":"init mongodb success"}
+{"level":"DEBUG","time":"2025-02-18T17:00:09.645+0800","caller":"bluebell/main.go:70","msg":"init kafka success"}
+{"level":"DEBUG","time":"2025-02-18T17:00:09.645+0800","caller":"bluebell/main.go:72","msg":"init websocket success"}
+{"level":"INFO","time":"2025-02-18T17:00:48.705+0800","caller":"bluebell/main.go:110","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-02-18T17:00:48.705+0800","caller":"bluebell/main.go:119","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-02-18T17:00:52.865+0800","caller":"bluebell/main.go:39","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-02-18T17:00:52.866+0800","caller":"bluebell/main.go:44","msg":"init mongodb success"}
+{"level":"DEBUG","time":"2025-02-18T17:00:52.875+0800","caller":"bluebell/main.go:71","msg":"init kafka success"}
+{"level":"DEBUG","time":"2025-02-18T17:00:52.875+0800","caller":"bluebell/main.go:73","msg":"init websocket success"}
+{"level":"INFO","time":"2025-02-18T17:01:49.944+0800","caller":"bluebell/main.go:111","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-02-18T17:01:49.944+0800","caller":"bluebell/main.go:120","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-02-18T17:01:55.205+0800","caller":"bluebell/main.go:39","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-02-18T17:01:55.208+0800","caller":"bluebell/main.go:44","msg":"init mongodb success"}
+{"level":"DEBUG","time":"2025-02-18T17:01:55.221+0800","caller":"bluebell/main.go:73","msg":"init kafka success"}
+{"level":"DEBUG","time":"2025-02-18T17:01:55.221+0800","caller":"bluebell/main.go:75","msg":"init websocket success"}
+{"level":"INFO","time":"2025-02-18T17:02:25.274+0800","caller":"bluebell/main.go:113","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-02-18T17:02:25.274+0800","caller":"bluebell/main.go:122","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-02-18T17:05:18.989+0800","caller":"bluebell/main.go:39","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-02-18T17:05:18.990+0800","caller":"bluebell/main.go:44","msg":"init mongodb success"}
+{"level":"DEBUG","time":"2025-02-18T17:05:19.010+0800","caller":"bluebell/main.go:77","msg":"init kafka success"}
+{"level":"DEBUG","time":"2025-02-18T17:05:19.010+0800","caller":"bluebell/main.go:79","msg":"init websocket success"}
+{"level":"INFO","time":"2025-02-18T17:05:58.105+0800","caller":"bluebell/main.go:117","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-02-18T17:05:58.106+0800","caller":"bluebell/main.go:126","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-02-18T21:16:56.314+0800","caller":"bluebell/main.go:39","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-02-18T21:16:56.315+0800","caller":"bluebell/main.go:44","msg":"init mongodb success"}
+{"level":"DEBUG","time":"2025-02-18T21:16:56.334+0800","caller":"bluebell/main.go:74","msg":"init kafka success"}
+{"level":"DEBUG","time":"2025-02-18T21:16:56.335+0800","caller":"bluebell/main.go:76","msg":"init websocket success"}
+{"level":"INFO","time":"2025-02-18T21:18:47.473+0800","caller":"bluebell/main.go:114","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-02-18T21:18:47.474+0800","caller":"bluebell/main.go:123","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-02-18T21:19:03.857+0800","caller":"bluebell/main.go:39","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-02-18T21:19:03.858+0800","caller":"bluebell/main.go:44","msg":"init mongodb success"}
+{"level":"DEBUG","time":"2025-02-18T21:19:03.872+0800","caller":"bluebell/main.go:73","msg":"init kafka success"}
+{"level":"DEBUG","time":"2025-02-18T21:19:03.872+0800","caller":"bluebell/main.go:75","msg":"init websocket success"}
+{"level":"INFO","time":"2025-02-18T21:19:51.973+0800","caller":"bluebell/main.go:113","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-02-18T21:19:51.974+0800","caller":"bluebell/main.go:122","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-02-18T21:19:57.897+0800","caller":"bluebell/main.go:40","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-02-18T21:19:57.898+0800","caller":"bluebell/main.go:45","msg":"init mongodb success"}
+{"level":"DEBUG","time":"2025-02-18T21:19:57.915+0800","caller":"bluebell/main.go:75","msg":"init kafka success"}
+{"level":"DEBUG","time":"2025-02-18T21:19:57.915+0800","caller":"bluebell/main.go:77","msg":"init websocket success"}
+{"level":"INFO","time":"2025-02-18T21:20:09.987+0800","caller":"bluebell/main.go:115","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-02-18T21:20:09.987+0800","caller":"bluebell/main.go:124","msg":"Server exiting"}
+{"level":"DEBUG","time":"2025-02-18T21:23:03.834+0800","caller":"bluebell/main.go:39","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-02-18T21:23:03.835+0800","caller":"bluebell/main.go:44","msg":"init mongodb success"}
+{"level":"DEBUG","time":"2025-02-18T21:23:03.850+0800","caller":"bluebell/main.go:73","msg":"init kafka success"}
+{"level":"DEBUG","time":"2025-02-18T21:23:03.850+0800","caller":"bluebell/main.go:75","msg":"init websocket success"}
+{"level":"INFO","time":"2025-02-18T21:25:13.000+0800","caller":"bluebell/main.go:113","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2025-02-18T21:25:13.001+0800","caller":"bluebell/main.go:122","msg":"Server exiting"}

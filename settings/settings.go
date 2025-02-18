@@ -18,6 +18,7 @@ type AppConfig struct {
 	Port         int    `mapstructure:"port"`
 	*MySQLConfig `mapstructure:"mysql"`
 	*RedisConfig `mapstructure:"redis"`
+	*MongoConfig `mapstructure:"mongo"`
 	*LogConfig   `mapstructure:"log"`
 }
 
@@ -37,6 +38,14 @@ type RedisConfig struct {
 	Password string `mapstructure:"password"`
 	DB       int    `mapstructure:"db"`
 	PoolSize int    `mapstructure:"pool_size"`
+}
+
+type MongoConfig struct {
+	Host     string `mapstructure:"host"`
+	Port     int    `mapstructure:"port"`
+	User     string `mapstructure:"user"`
+	Password string `mapstructure:"password"`
+	DbName   string `mapstructure:"dbname"`
 }
 
 type LogConfig struct {

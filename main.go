@@ -3,6 +3,7 @@ package main
 import (
 	"bluebell/Kafka"
 	"bluebell/controller"
+	"bluebell/dao/mongo"
 	"bluebell/dao/mysql"
 	"bluebell/dao/redis"
 	"bluebell/logger"
@@ -36,6 +37,16 @@ func main() {
 	}
 	defer zap.L().Sync()
 	zap.L().Debug("init logger success")
+	if err := mongo.Init(settings.Conf.MongoConfig); err != nil {
+		fmt.Println("init mongodb failed", err)
+		return
+	}
+	zap.L().Debug("init mongodb success")
+	doc := make(map[string]interface{})
+	doc["name"] = "小A"
+
+	encodes, err := mongo.FindManyByOneCon("testdata", doc)
+	fmt.Println(encodes, err)
 	//3。初始化Mysql
 	if err := mysql.Init(settings.Conf.MySQLConfig); err != nil {
 		fmt.Println("init mysql failed", err)
