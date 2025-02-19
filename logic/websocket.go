@@ -1,9 +1,12 @@
 package logic
 
 import (
+	"bluebell/dao/mongo"
 	"bluebell/dao/mysql"
 	"bluebell/models"
 	mywebsocket "bluebell/websocket"
+	"fmt"
+	"reflect"
 	"strconv"
 
 	"github.com/goccy/go-json"
@@ -77,6 +80,32 @@ func Read(c *models.Client) {
 			continue
 		}
 		AimClient, flag := mywebsocket.CheckIfConnected(SendMessage.Recipient)
+		replyMsg := models.ReplyMsg{
+			From:    c.ID,
+			Code:    0,
+			Content: SendMessage.Content,
+		}
+		Msg := models.Message{
+			Sender:    c.ID,
+			Recipient: SendMessage.Recipient,
+			Content:   SendMessage.Content,
+		}
+		//保存历史消息
+		doc := make(map[string]interface{})
+		eventValue := reflect.ValueOf(Msg)
+		for i := 0; i < eventValue.NumField(); i++ {
+			field := eventValue.Type().Field(i)      // 获取字段名称
+			fieldValue := eventValue.Field(i)        // 获取字段值
+			doc[field.Name] = fieldValue.Interface() // 将字段名称和值添加到 doc
+		}
+		err = mongo.InsertOne("message", doc)
+		if err != nil {
+			fmt.Println(err)
+			continue
+		}
+
+		var marshalreply []byte
+		marshalreply, err = json.Marshal(replyMsg)
 		if !flag {
 			replyMsg := models.ReplyMsg{
 				From:    "server",
@@ -85,17 +114,10 @@ func Read(c *models.Client) {
 			}
 			msg, _ := json.Marshal(replyMsg)
 			_ = c.Socket.WriteMessage(websocket.TextMessage, msg)
-			//Todo：用户下线后的逻辑
 			continue
+		} else {
+			AimClient.Send <- marshalreply
 		}
-		replyMsg := models.ReplyMsg{
-			From:    c.ID,
-			Code:    0,
-			Content: SendMessage.Content,
-		}
-		var marshalreply []byte
-		marshalreply, err = json.Marshal(replyMsg)
-		AimClient.Send <- marshalreply
 	}
 }
 

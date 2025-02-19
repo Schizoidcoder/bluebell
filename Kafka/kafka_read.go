@@ -1,12 +1,14 @@
 package Kafka
 
 import (
+	"bluebell/dao/mongo"
 	"bluebell/models"
 	mywebsocket "bluebell/websocket"
 	"context"
 	"encoding/json"
 	"fmt"
 	"log"
+	"reflect"
 	"strconv"
 	"time"
 
@@ -33,11 +35,24 @@ func InitKafkaReader(ctx context.Context, topics []string) {
 				fmt.Println(err)
 				continue
 			}
+			//保存历史消息
+			doc := make(map[string]interface{})
+			eventValue := reflect.ValueOf(event)
+			for i := 0; i < eventValue.NumField(); i++ {
+				field := eventValue.Type().Field(i)      // 获取字段名称
+				fieldValue := eventValue.Field(i)        // 获取字段值
+				doc[field.Name] = fieldValue.Interface() // 将字段名称和值添加到 doc
+			}
+			err = mongo.InsertOne("message", doc)
+			if err != nil {
+				fmt.Println(err)
+				continue
+			}
+
 			itoa := strconv.FormatInt(event.AuthorID, 10)
 			AimClient, flag := mywebsocket.CheckIfConnected(itoa)
 			if !flag {
 				log.Printf("当前用户已下线")
-				//Todo:用户下线后的逻辑
 				continue
 			}
 			AimClient.Send <- msg.Value

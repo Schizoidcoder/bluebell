@@ -21,6 +21,6 @@ func Init(cfg *settings.MongoConfig) (err error) {
 		return
 	}
 	mdb = mdbClient.Database(cfg.DbName)
-	fmt.Println(mdb.Name())
+	//fmt.Println(mdb.Name())
 	return
 }

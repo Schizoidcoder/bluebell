@@ -42,11 +42,11 @@ func main() {
 		return
 	}
 	zap.L().Debug("init mongodb success")
-	doc := make(map[string]interface{})
-	doc["name"] = "小A"
-
-	encodes, err := mongo.FindManyByOneCon("testdata", doc)
-	fmt.Println(encodes, err)
+	//doc := make(map[string]interface{})
+	//doc["name"] = "小A"
+	//
+	//encodes, err := mongo.FindManyByOneCon("testdata", doc)
+	//fmt.Println(encodes, err)
 	//3。初始化Mysql
 	if err := mysql.Init(settings.Conf.MySQLConfig); err != nil {
 		fmt.Println("init mysql failed", err)
